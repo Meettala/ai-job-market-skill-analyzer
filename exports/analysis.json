@@ -1,0 +1,473 @@
+{
+  "postings_analyzed": 40,
+  "generated_from": "synthetic sample data (see data/generate_sample_postings.py)",
+  "skill_frequency": [
+    {
+      "skill": "Python",
+      "category": "Programming",
+      "postings_mentioning": 26,
+      "pct_of_postings": 65.0
+    },
+    {
+      "skill": "NLP",
+      "category": "Core ML Skills",
+      "postings_mentioning": 21,
+      "pct_of_postings": 52.5
+    },
+    {
+      "skill": "Cloud (AWS)",
+      "category": "MLOps / Infra",
+      "postings_mentioning": 19,
+      "pct_of_postings": 47.5
+    },
+    {
+      "skill": "CI/CD",
+      "category": "MLOps / Infra",
+      "postings_mentioning": 18,
+      "pct_of_postings": 45.0
+    },
+    {
+      "skill": "Data Warehousing",
+      "category": "Data Engineering",
+      "postings_mentioning": 18,
+      "pct_of_postings": 45.0
+    },
+    {
+      "skill": "Experiment Tracking",
+      "category": "MLOps / Infra",
+      "postings_mentioning": 18,
+      "pct_of_postings": 45.0
+    },
+    {
+      "skill": "SQL",
+      "category": "Programming",
+      "postings_mentioning": 18,
+      "pct_of_postings": 45.0
+    },
+    {
+      "skill": "Hugging Face",
+      "category": "ML/DL Frameworks",
+      "postings_mentioning": 17,
+      "pct_of_postings": 42.5
+    },
+    {
+      "skill": "PyTorch",
+      "category": "ML/DL Frameworks",
+      "postings_mentioning": 17,
+      "pct_of_postings": 42.5
+    },
+    {
+      "skill": "A/B Testing",
+      "category": "Core ML Skills",
+      "postings_mentioning": 16,
+      "pct_of_postings": 40.0
+    },
+    {
+      "skill": "LLM APIs",
+      "category": "LLM / GenAI",
+      "postings_mentioning": 16,
+      "pct_of_postings": 40.0
+    },
+    {
+      "skill": "Pandas",
+      "category": "Data Engineering",
+      "postings_mentioning": 16,
+      "pct_of_postings": 40.0
+    },
+    {
+      "skill": "RAG",
+      "category": "LLM / GenAI",
+      "postings_mentioning": 16,
+      "pct_of_postings": 40.0
+    },
+    {
+      "skill": "Statistics",
+      "category": "Core ML Skills",
+      "postings_mentioning": 16,
+      "pct_of_postings": 40.0
+    },
+    {
+      "skill": "Vector Databases",
+      "category": "LLM / GenAI",
+      "postings_mentioning": 16,
+      "pct_of_postings": 40.0
+    },
+    {
+      "skill": "Agents",
+      "category": "LLM / GenAI",
+      "postings_mentioning": 15,
+      "pct_of_postings": 37.5
+    },
+    {
+      "skill": "Airflow",
+      "category": "Data Engineering",
+      "postings_mentioning": 15,
+      "pct_of_postings": 37.5
+    },
+    {
+      "skill": "Data Visualization",
+      "category": "Collaboration / Product",
+      "postings_mentioning": 15,
+      "pct_of_postings": 37.5
+    },
+    {
+      "skill": "ETL",
+      "category": "Data Engineering",
+      "postings_mentioning": 15,
+      "pct_of_postings": 37.5
+    },
+    {
+      "skill": "Prompt Engineering",
+      "category": "LLM / GenAI",
+      "postings_mentioning": 15,
+      "pct_of_postings": 37.5
+    },
+    {
+      "skill": "Stakeholder Communication",
+      "category": "Collaboration / Product",
+      "postings_mentioning": 15,
+      "pct_of_postings": 37.5
+    },
+    {
+      "skill": "Cloud (Azure)",
+      "category": "MLOps / Infra",
+      "postings_mentioning": 14,
+      "pct_of_postings": 35.0
+    },
+    {
+      "skill": "Cloud (GCP)",
+      "category": "MLOps / Infra",
+      "postings_mentioning": 14,
+      "pct_of_postings": 35.0
+    },
+    {
+      "skill": "Agile",
+      "category": "Collaboration / Product",
+      "postings_mentioning": 12,
+      "pct_of_postings": 30.0
+    },
+    {
+      "skill": "Computer Vision",
+      "category": "Core ML Skills",
+      "postings_mentioning": 12,
+      "pct_of_postings": 30.0
+    },
+    {
+      "skill": "Deep Learning",
+      "category": "Core ML Skills",
+      "postings_mentioning": 12,
+      "pct_of_postings": 30.0
+    },
+    {
+      "skill": "Keras",
+      "category": "ML/DL Frameworks",
+      "postings_mentioning": 12,
+      "pct_of_postings": 30.0
+    },
+    {
+      "skill": "TensorFlow",
+      "category": "ML/DL Frameworks",
+      "postings_mentioning": 12,
+      "pct_of_postings": 30.0
+    },
+    {
+      "skill": "Version Control",
+      "category": "Collaboration / Product",
+      "postings_mentioning": 12,
+      "pct_of_postings": 30.0
+    },
+    {
+      "skill": "Docker",
+      "category": "MLOps / Infra",
+      "postings_mentioning": 11,
+      "pct_of_postings": 27.5
+    },
+    {
+      "skill": "Feature Engineering",
+      "category": "Core ML Skills",
+      "postings_mentioning": 11,
+      "pct_of_postings": 27.5
+    },
+    {
+      "skill": "Kubernetes",
+      "category": "MLOps / Infra",
+      "postings_mentioning": 11,
+      "pct_of_postings": 27.5
+    },
+    {
+      "skill": "Model Evaluation",
+      "category": "Core ML Skills",
+      "postings_mentioning": 11,
+      "pct_of_postings": 27.5
+    },
+    {
+      "skill": "Fine-tuning",
+      "category": "LLM / GenAI",
+      "postings_mentioning": 9,
+      "pct_of_postings": 22.5
+    }
+  ],
+  "skill_cooccurrence": [
+    {
+      "skill_a": "Data Warehousing",
+      "skill_b": "SQL",
+      "co_occurrences": 18
+    },
+    {
+      "skill_a": "NLP",
+      "skill_b": "PyTorch",
+      "co_occurrences": 17
+    },
+    {
+      "skill_a": "Hugging Face",
+      "skill_b": "NLP",
+      "co_occurrences": 17
+    },
+    {
+      "skill_a": "Hugging Face",
+      "skill_b": "PyTorch",
+      "co_occurrences": 17
+    },
+    {
+      "skill_a": "LLM APIs",
+      "skill_b": "Vector Databases",
+      "co_occurrences": 16
+    },
+    {
+      "skill_a": "RAG",
+      "skill_b": "Vector Databases",
+      "co_occurrences": 16
+    },
+    {
+      "skill_a": "Pandas",
+      "skill_b": "Python",
+      "co_occurrences": 16
+    },
+    {
+      "skill_a": "A/B Testing",
+      "skill_b": "Statistics",
+      "co_occurrences": 16
+    },
+    {
+      "skill_a": "LLM APIs",
+      "skill_b": "RAG",
+      "co_occurrences": 16
+    },
+    {
+      "skill_a": "Data Visualization",
+      "skill_b": "Stakeholder Communication",
+      "co_occurrences": 15
+    },
+    {
+      "skill_a": "Airflow",
+      "skill_b": "ETL",
+      "co_occurrences": 15
+    },
+    {
+      "skill_a": "Cloud (AWS)",
+      "skill_b": "Cloud (GCP)",
+      "co_occurrences": 14
+    },
+    {
+      "skill_a": "Cloud (Azure)",
+      "skill_b": "Cloud (GCP)",
+      "co_occurrences": 14
+    },
+    {
+      "skill_a": "Cloud (AWS)",
+      "skill_b": "Cloud (Azure)",
+      "co_occurrences": 14
+    },
+    {
+      "skill_a": "NLP",
+      "skill_b": "Python",
+      "co_occurrences": 13
+    }
+  ],
+  "gap_report": {
+    "matched_skills": [
+      {
+        "skill": "Python",
+        "category": "Programming",
+        "pct_of_postings": 65.0
+      },
+      {
+        "skill": "SQL",
+        "category": "Programming",
+        "pct_of_postings": 45.0
+      },
+      {
+        "skill": "Pandas",
+        "category": "Data Engineering",
+        "pct_of_postings": 40.0
+      },
+      {
+        "skill": "Statistics",
+        "category": "Core ML Skills",
+        "pct_of_postings": 40.0
+      },
+      {
+        "skill": "Data Visualization",
+        "category": "Collaboration / Product",
+        "pct_of_postings": 37.5
+      }
+    ],
+    "missing_skills": [
+      {
+        "skill": "NLP",
+        "category": "Core ML Skills",
+        "pct_of_postings": 52.5
+      },
+      {
+        "skill": "Cloud (AWS)",
+        "category": "MLOps / Infra",
+        "pct_of_postings": 47.5
+      },
+      {
+        "skill": "CI/CD",
+        "category": "MLOps / Infra",
+        "pct_of_postings": 45.0
+      },
+      {
+        "skill": "Data Warehousing",
+        "category": "Data Engineering",
+        "pct_of_postings": 45.0
+      },
+      {
+        "skill": "Experiment Tracking",
+        "category": "MLOps / Infra",
+        "pct_of_postings": 45.0
+      },
+      {
+        "skill": "Hugging Face",
+        "category": "ML/DL Frameworks",
+        "pct_of_postings": 42.5
+      },
+      {
+        "skill": "PyTorch",
+        "category": "ML/DL Frameworks",
+        "pct_of_postings": 42.5
+      },
+      {
+        "skill": "A/B Testing",
+        "category": "Core ML Skills",
+        "pct_of_postings": 40.0
+      },
+      {
+        "skill": "LLM APIs",
+        "category": "LLM / GenAI",
+        "pct_of_postings": 40.0
+      },
+      {
+        "skill": "RAG",
+        "category": "LLM / GenAI",
+        "pct_of_postings": 40.0
+      },
+      {
+        "skill": "Vector Databases",
+        "category": "LLM / GenAI",
+        "pct_of_postings": 40.0
+      },
+      {
+        "skill": "Agents",
+        "category": "LLM / GenAI",
+        "pct_of_postings": 37.5
+      },
+      {
+        "skill": "Airflow",
+        "category": "Data Engineering",
+        "pct_of_postings": 37.5
+      },
+      {
+        "skill": "ETL",
+        "category": "Data Engineering",
+        "pct_of_postings": 37.5
+      },
+      {
+        "skill": "Prompt Engineering",
+        "category": "LLM / GenAI",
+        "pct_of_postings": 37.5
+      },
+      {
+        "skill": "Stakeholder Communication",
+        "category": "Collaboration / Product",
+        "pct_of_postings": 37.5
+      },
+      {
+        "skill": "Cloud (Azure)",
+        "category": "MLOps / Infra",
+        "pct_of_postings": 35.0
+      },
+      {
+        "skill": "Cloud (GCP)",
+        "category": "MLOps / Infra",
+        "pct_of_postings": 35.0
+      },
+      {
+        "skill": "Agile",
+        "category": "Collaboration / Product",
+        "pct_of_postings": 30.0
+      },
+      {
+        "skill": "Computer Vision",
+        "category": "Core ML Skills",
+        "pct_of_postings": 30.0
+      },
+      {
+        "skill": "Deep Learning",
+        "category": "Core ML Skills",
+        "pct_of_postings": 30.0
+      },
+      {
+        "skill": "Keras",
+        "category": "ML/DL Frameworks",
+        "pct_of_postings": 30.0
+      },
+      {
+        "skill": "TensorFlow",
+        "category": "ML/DL Frameworks",
+        "pct_of_postings": 30.0
+      },
+      {
+        "skill": "Version Control",
+        "category": "Collaboration / Product",
+        "pct_of_postings": 30.0
+      },
+      {
+        "skill": "Docker",
+        "category": "MLOps / Infra",
+        "pct_of_postings": 27.5
+      },
+      {
+        "skill": "Feature Engineering",
+        "category": "Core ML Skills",
+        "pct_of_postings": 27.5
+      },
+      {
+        "skill": "Kubernetes",
+        "category": "MLOps / Infra",
+        "pct_of_postings": 27.5
+      },
+      {
+        "skill": "Model Evaluation",
+        "category": "Core ML Skills",
+        "pct_of_postings": 27.5
+      },
+      {
+        "skill": "Fine-tuning",
+        "category": "LLM / GenAI",
+        "pct_of_postings": 22.5
+      }
+    ],
+    "match_rate_pct": 14.7
+  },
+  "candidate_skills_used": [
+    "Python",
+    "Pandas",
+    "SQL",
+    "scikit-learn",
+    "Git",
+    "Statistics",
+    "Data Visualization"
+  ]
+}

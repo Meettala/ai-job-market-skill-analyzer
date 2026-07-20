@@ -1,0 +1,362 @@
+[
+  {
+    "title": "NLP Engineer",
+    "company": "Cascade Intelligence",
+    "location": "Remote (EU)",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/1",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a NLP Engineer to join our growing AI team at Cascade Intelligence. This is a Junior-Mid-level role based in Remote (EU). We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling."
+  },
+  {
+    "title": "Machine Learning Engineer, LLM Platform",
+    "company": "Ledgerline Fintech",
+    "location": "London, UK",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/2",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Machine Learning Engineer, LLM Platform to join our growing AI team at Ledgerline Fintech. This is a Junior-level role based in London, UK. Solid grounding in feature engineering, model evaluation, and cross-validation techniques. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. Strong understanding of statistics, A/B testing, and experimentation design expected. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras."
+  },
+  {
+    "title": "AI Engineer",
+    "company": "Pinehall Robotics",
+    "location": "Remote",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/3",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI Engineer to join our growing AI team at Pinehall Robotics. This is a Junior-Mid-level role based in Remote. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production."
+  },
+  {
+    "title": "Data Scientist, AI/ML",
+    "company": "Harborview Software",
+    "location": "Remote (EU)",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/4",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Data Scientist, AI/ML to join our growing AI team at Harborview Software. This is a Junior-level role based in Remote (EU). Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred). This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required."
+  },
+  {
+    "title": "MLOps Engineer",
+    "company": "Ledgerline Fintech",
+    "location": "Manchester, UK",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/5",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a MLOps Engineer to join our growing AI team at Ledgerline Fintech. This is a Junior-level role based in Manchester, UK. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. Strong understanding of statistics, A/B testing, and experimentation design expected. You'll write production-grade Python and collaborate cross-functionally with product and engineering. Version control with Git/GitHub and comfort working in an Agile team is expected. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production."
+  },
+  {
+    "title": "Data Scientist",
+    "company": "Cobalt Insight",
+    "location": "Remote (EU)",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/6",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Data Scientist to join our growing AI team at Cobalt Insight. This is a Junior-Mid-level role based in Remote (EU). You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. CI/CD experience for ML pipelines (testing, deployment automation) is expected. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role."
+  },
+  {
+    "title": "Junior Data Scientist",
+    "company": "Harborview Software",
+    "location": "Berlin, Germany",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/7",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Junior Data Scientist to join our growing AI team at Harborview Software. This is a Mid-level role based in Berlin, Germany. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. Strong understanding of statistics, A/B testing, and experimentation design expected. You'll write production-grade Python and collaborate cross-functionally with product and engineering."
+  },
+  {
+    "title": "NLP Engineer",
+    "company": "Cascade Intelligence",
+    "location": "Remote (EU)",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/8",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a NLP Engineer to join our growing AI team at Cascade Intelligence. This is a Mid-level role based in Remote (EU). We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Version control with Git/GitHub and comfort working in an Agile team is expected. Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred)."
+  },
+  {
+    "title": "Junior Data Scientist",
+    "company": "Delta Compute",
+    "location": "Berlin, Germany",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/9",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Junior Data Scientist to join our growing AI team at Delta Compute. This is a Mid-level role based in Berlin, Germany. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. You'll write production-grade Python and collaborate cross-functionally with product and engineering. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Version control with Git/GitHub and comfort working in an Agile team is expected."
+  },
+  {
+    "title": "AI Engineer",
+    "company": "Bluepeak AI",
+    "location": "Remote",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/10",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI Engineer to join our growing AI team at Bluepeak AI. This is a Junior-Mid-level role based in Remote. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Version control with Git/GitHub and comfort working in an Agile team is expected. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred). You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling."
+  },
+  {
+    "title": "AI/ML Software Engineer",
+    "company": "Fieldstone AI",
+    "location": "Remote (UK)",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/11",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI/ML Software Engineer to join our growing AI team at Fieldstone AI. This is a Junior-Mid-level role based in Remote (UK). You'll write production-grade Python and collaborate cross-functionally with product and engineering. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. Strong understanding of statistics, A/B testing, and experimentation design expected. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. Familiarity with prompt engineering and LLM evaluation is a strong plus."
+  },
+  {
+    "title": "Data Scientist, AI/ML",
+    "company": "Pinehall Robotics",
+    "location": "Remote (EU)",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/12",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Data Scientist, AI/ML to join our growing AI team at Pinehall Robotics. This is a Mid-level role based in Remote (EU). We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred). Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. Strong understanding of statistics, A/B testing, and experimentation design expected. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. Familiarity with prompt engineering and LLM evaluation is a strong plus. CI/CD experience for ML pipelines (testing, deployment automation) is expected. You'll write production-grade Python and collaborate cross-functionally with product and engineering."
+  },
+  {
+    "title": "Machine Learning Engineer, LLM Platform",
+    "company": "Circuit & Sage",
+    "location": "Remote",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/13",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Machine Learning Engineer, LLM Platform to join our growing AI team at Circuit & Sage. This is a Mid-level role based in Remote. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. Familiarity with prompt engineering and LLM evaluation is a strong plus. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Solid grounding in feature engineering, model evaluation, and cross-validation techniques. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API."
+  },
+  {
+    "title": "MLOps Engineer",
+    "company": "Pinehall Robotics",
+    "location": "London, UK",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/14",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a MLOps Engineer to join our growing AI team at Pinehall Robotics. This is a Mid-level role based in London, UK. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Strong understanding of statistics, A/B testing, and experimentation design expected. CI/CD experience for ML pipelines (testing, deployment automation) is expected."
+  },
+  {
+    "title": "NLP Engineer",
+    "company": "Anthos Cloud AI",
+    "location": "Berlin, Germany",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/15",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a NLP Engineer to join our growing AI team at Anthos Cloud AI. This is a Mid-level role based in Berlin, Germany. Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. You'll write production-grade Python and collaborate cross-functionally with product and engineering. Solid grounding in feature engineering, model evaluation, and cross-validation techniques. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus."
+  },
+  {
+    "title": "MLOps Engineer",
+    "company": "Rivergate Logistics AI",
+    "location": "Remote (EU)",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/16",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a MLOps Engineer to join our growing AI team at Rivergate Logistics AI. This is a Mid-level role based in Remote (EU). Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. You'll write production-grade Python and collaborate cross-functionally with product and engineering. Version control with Git/GitHub and comfort working in an Agile team is expected. Strong understanding of statistics, A/B testing, and experimentation design expected. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role."
+  },
+  {
+    "title": "Applied Scientist",
+    "company": "Amberbrook AI",
+    "location": "Remote (UK)",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/17",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Applied Scientist to join our growing AI team at Amberbrook AI. This is a Junior-level role based in Remote (UK). Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. CI/CD experience for ML pipelines (testing, deployment automation) is expected."
+  },
+  {
+    "title": "NLP Engineer",
+    "company": "Anthos Cloud AI",
+    "location": "London, UK",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/18",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a NLP Engineer to join our growing AI team at Anthos Cloud AI. This is a Junior-level role based in London, UK. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. Familiarity with prompt engineering and LLM evaluation is a strong plus. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred). Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required."
+  },
+  {
+    "title": "AI/ML Software Engineer",
+    "company": "Solara Labs",
+    "location": "London, UK",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/19",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI/ML Software Engineer to join our growing AI team at Solara Labs. This is a Mid-level role based in London, UK. You'll write production-grade Python and collaborate cross-functionally with product and engineering. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred)."
+  },
+  {
+    "title": "AI Research Engineer",
+    "company": "Circuit & Sage",
+    "location": "Remote (EU)",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/20",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI Research Engineer to join our growing AI team at Circuit & Sage. This is a Junior-Mid-level role based in Remote (EU). Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Strong understanding of statistics, A/B testing, and experimentation design expected. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred). We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production."
+  },
+  {
+    "title": "AI Research Engineer",
+    "company": "Rivergate Logistics AI",
+    "location": "London, UK",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/21",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI Research Engineer to join our growing AI team at Rivergate Logistics AI. This is a Junior-Mid-level role based in London, UK. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. CI/CD experience for ML pipelines (testing, deployment automation) is expected. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred). This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API."
+  },
+  {
+    "title": "Machine Learning Engineer, LLM Platform",
+    "company": "Rivergate Logistics AI",
+    "location": "Berlin, Germany",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/22",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Machine Learning Engineer, LLM Platform to join our growing AI team at Rivergate Logistics AI. This is a Mid-level role based in Berlin, Germany. Strong understanding of statistics, A/B testing, and experimentation design expected. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. You'll write production-grade Python and collaborate cross-functionally with product and engineering. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API."
+  },
+  {
+    "title": "Applied Scientist",
+    "company": "Nightingale Diagnostics AI",
+    "location": "Remote (EU)",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/23",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Applied Scientist to join our growing AI team at Nightingale Diagnostics AI. This is a Mid-level role based in Remote (EU). You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. You'll write production-grade Python and collaborate cross-functionally with product and engineering. Familiarity with prompt engineering and LLM evaluation is a strong plus. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API."
+  },
+  {
+    "title": "AI Research Engineer",
+    "company": "Anthos Cloud AI",
+    "location": "Manchester, UK",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/24",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI Research Engineer to join our growing AI team at Anthos Cloud AI. This is a Mid-level role based in Manchester, UK. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. You'll write production-grade Python and collaborate cross-functionally with product and engineering. Solid grounding in feature engineering, model evaluation, and cross-validation techniques."
+  },
+  {
+    "title": "NLP Engineer",
+    "company": "Ledgerline Fintech",
+    "location": "Remote (EU)",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/25",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a NLP Engineer to join our growing AI team at Ledgerline Fintech. This is a Junior-Mid-level role based in Remote (EU). You'll write production-grade Python and collaborate cross-functionally with product and engineering. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Solid grounding in feature engineering, model evaluation, and cross-validation techniques. Version control with Git/GitHub and comfort working in an Agile team is expected."
+  },
+  {
+    "title": "AI Engineer",
+    "company": "Vantage Point Analytics",
+    "location": "Remote",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/26",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI Engineer to join our growing AI team at Vantage Point Analytics. This is a Junior-level role based in Remote. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred). Solid grounding in feature engineering, model evaluation, and cross-validation techniques. Version control with Git/GitHub and comfort working in an Agile team is expected. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Strong understanding of statistics, A/B testing, and experimentation design expected. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred."
+  },
+  {
+    "title": "Data Scientist",
+    "company": "Fenwick Data Systems",
+    "location": "Remote",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/27",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Data Scientist to join our growing AI team at Fenwick Data Systems. This is a Junior-level role based in Remote. Familiarity with prompt engineering and LLM evaluation is a strong plus. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus."
+  },
+  {
+    "title": "MLOps Engineer",
+    "company": "Cascade Intelligence",
+    "location": "Berlin, Germany",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/28",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a MLOps Engineer to join our growing AI team at Cascade Intelligence. This is a Junior-Mid-level role based in Berlin, Germany. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Familiarity with prompt engineering and LLM evaluation is a strong plus. Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Version control with Git/GitHub and comfort working in an Agile team is expected."
+  },
+  {
+    "title": "AI Engineer",
+    "company": "Nightingale Diagnostics AI",
+    "location": "Remote",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/29",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI Engineer to join our growing AI team at Nightingale Diagnostics AI. This is a Junior-level role based in Remote. Strong understanding of statistics, A/B testing, and experimentation design expected. CI/CD experience for ML pipelines (testing, deployment automation) is expected. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Familiarity with prompt engineering and LLM evaluation is a strong plus. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. Solid grounding in feature engineering, model evaluation, and cross-validation techniques."
+  },
+  {
+    "title": "Junior Data Scientist",
+    "company": "Cobalt Insight",
+    "location": "Manchester, UK",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/30",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Junior Data Scientist to join our growing AI team at Cobalt Insight. This is a Junior-Mid-level role based in Manchester, UK. Familiarity with prompt engineering and LLM evaluation is a strong plus. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. Version control with Git/GitHub and comfort working in an Agile team is expected. Comfortable working with computer vision models and deep learning frameworks like TensorFlow or Keras. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production."
+  },
+  {
+    "title": "Data Scientist",
+    "company": "Nightingale Diagnostics AI",
+    "location": "Remote (UK)",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/31",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Data Scientist to join our growing AI team at Nightingale Diagnostics AI. This is a Junior-Mid-level role based in Remote (UK). Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. CI/CD experience for ML pipelines (testing, deployment automation) is expected. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Solid grounding in feature engineering, model evaluation, and cross-validation techniques. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus."
+  },
+  {
+    "title": "Data Scientist, AI/ML",
+    "company": "Anthos Cloud AI",
+    "location": "London, UK",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/32",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Data Scientist, AI/ML to join our growing AI team at Anthos Cloud AI. This is a Junior-level role based in London, UK. Familiarity with prompt engineering and LLM evaluation is a strong plus. You'll write production-grade Python and collaborate cross-functionally with product and engineering. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred)."
+  },
+  {
+    "title": "MLOps Engineer",
+    "company": "Nightingale Diagnostics AI",
+    "location": "Berlin, Germany",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/33",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a MLOps Engineer to join our growing AI team at Nightingale Diagnostics AI. This is a Junior-Mid-level role based in Berlin, Germany. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Familiarity with prompt engineering and LLM evaluation is a strong plus. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production."
+  },
+  {
+    "title": "AI/ML Software Engineer",
+    "company": "Rivergate Logistics AI",
+    "location": "London, UK",
+    "seniority": "Junior",
+    "source_url": "https://example-demo-data.local/postings/34",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI/ML Software Engineer to join our growing AI team at Rivergate Logistics AI. This is a Junior-level role based in London, UK. Version control with Git/GitHub and comfort working in an Agile team is expected. Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. Strong understanding of statistics, A/B testing, and experimentation design expected. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Familiarity with prompt engineering and LLM evaluation is a strong plus. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required."
+  },
+  {
+    "title": "AI/ML Software Engineer",
+    "company": "Nightingale Diagnostics AI",
+    "location": "Remote (UK)",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/35",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI/ML Software Engineer to join our growing AI team at Nightingale Diagnostics AI. This is a Junior-Mid-level role based in Remote (UK). CI/CD experience for ML pipelines (testing, deployment automation) is expected. Strong understanding of statistics, A/B testing, and experimentation design expected. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Exposure to fine-tuning open-source LLMs with LoRA/PEFT is desirable but not required. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. Solid grounding in feature engineering, model evaluation, and cross-validation techniques."
+  },
+  {
+    "title": "AI/ML Software Engineer",
+    "company": "Cobalt Insight",
+    "location": "London, UK",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/36",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI/ML Software Engineer to join our growing AI team at Cobalt Insight. This is a Junior-Mid-level role based in London, UK. Solid grounding in feature engineering, model evaluation, and cross-validation techniques. We use PyTorch and Hugging Face transformers to build and fine-tune NLP models for production. Strong understanding of statistics, A/B testing, and experimentation design expected. Version control with Git/GitHub and comfort working in an Agile team is expected. Familiarity with prompt engineering and LLM evaluation is a strong plus. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus."
+  },
+  {
+    "title": "AI Engineer",
+    "company": "Cascade Intelligence",
+    "location": "Remote",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/37",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a AI Engineer to join our growing AI team at Cascade Intelligence. This is a Junior-Mid-level role based in Remote. Familiarity with prompt engineering and LLM evaluation is a strong plus. You will track experiments with MLflow or Weights & Biases and monitor deployed models in production. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role."
+  },
+  {
+    "title": "Data Scientist",
+    "company": "Delta Compute",
+    "location": "Remote (UK)",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/38",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a Data Scientist to join our growing AI team at Delta Compute. This is a Junior-Mid-level role based in Remote (UK). You'll containerize services with Docker and deploy to Kubernetes on AWS (SageMaker experience preferred). Solid grounding in feature engineering, model evaluation, and cross-validation techniques. Hands-on experience building AI agents with LangChain or similar agent frameworks is a bonus. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Strong understanding of statistics, A/B testing, and experimentation design expected. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API."
+  },
+  {
+    "title": "NLP Engineer",
+    "company": "Cobalt Insight",
+    "location": "London, UK",
+    "seniority": "Junior-Mid",
+    "source_url": "https://example-demo-data.local/postings/39",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a NLP Engineer to join our growing AI team at Cobalt Insight. This is a Junior-Mid-level role based in London, UK. You will build and deploy machine learning models in Python, using pandas and scikit-learn for data preparation and modeling. Version control with Git/GitHub and comfort working in an Agile team is expected. Experience with GCP (Vertex AI) or Azure ML is a plus, AWS is required. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. You will build dashboards in Tableau or Power BI to communicate findings to non-technical stakeholders. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Strong understanding of statistics, A/B testing, and experimentation design expected."
+  },
+  {
+    "title": "NLP Engineer",
+    "company": "Nightingale Diagnostics AI",
+    "location": "Berlin, Germany",
+    "seniority": "Mid",
+    "source_url": "https://example-demo-data.local/postings/40",
+    "retrieved_at": "2026-07-01",
+    "raw_text": "We're looking for a NLP Engineer to join our growing AI team at Nightingale Diagnostics AI. This is a Mid-level role based in Berlin, Germany. This role involves building RAG pipelines using vector databases such as Pinecone or pgvector, and working directly with the OpenAI API and Anthropic API. Experience with Airflow or similar orchestration tools for ETL pipelines is preferred. CI/CD experience for ML pipelines (testing, deployment automation) is expected. Experience with SQL and data warehousing (e.g. Snowflake or BigQuery) required for this role. Familiarity with prompt engineering and LLM evaluation is a strong plus."
+  }
+]
