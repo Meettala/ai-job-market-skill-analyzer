@@ -1,16 +1,10 @@
-"""
-End-to-end pipeline: load postings -> extract skills -> store in SQLite ->
-export aggregated results as JSON (used by both the Streamlit app and the
-static Next.js dashboard on the portfolio site).
-
-Usage:
-    python -m src.analyzer.pipeline
-"""
+"""End-to-end synthetic-data analysis pipeline."""
 
 from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 from .db import get_connection, insert_posting, insert_skills
 from .extractor import extract_skills
@@ -21,46 +15,73 @@ DB_PATH = ROOT / "data" / "postings.db"
 POSTINGS_PATH = ROOT / "data" / "sample_postings.json"
 EXPORT_PATH = ROOT / "exports" / "analysis.json"
 
-# Example candidate profile — swap for a real one when wiring this up to
-# JobPilot AI's evidence bank later.
 SAMPLE_CANDIDATE_SKILLS = [
-    "Python", "Pandas", "SQL", "scikit-learn", "Git", "Statistics", "Data Visualization",
+    "Python",
+    "Pandas",
+    "SQL",
+    "scikit-learn",
+    "Git",
+    "Statistics",
+    "Data Visualization",
 ]
 
 
-def run_pipeline() -> dict:
-    if DB_PATH.exists():
-        DB_PATH.unlink()  # rebuild fresh each run for a demo-clean state
+def run_pipeline(
+    postings_path: str | Path = POSTINGS_PATH,
+    db_path: str | Path = DB_PATH,
+    export_path: str | Path = EXPORT_PATH,
+    candidate_skills: list[str] | None = None,
+) -> dict[str, Any]:
+    """Analyse permitted postings and export a deterministic report."""
+    postings_file = Path(postings_path)
+    database_file = Path(db_path)
+    output_file = Path(export_path)
 
-    conn = get_connection(DB_PATH)
-    postings = json.loads(POSTINGS_PATH.read_text())
+    postings = _load_postings(postings_file)
+    if database_file.exists():
+        database_file.unlink()
 
-    for posting in postings:
-        posting_id = insert_posting(conn, posting)
-        skills = extract_skills(posting["raw_text"])
-        insert_skills(conn, posting_id, skills)
+    conn = get_connection(database_file)
+    try:
+        for posting in postings:
+            posting_id = insert_posting(conn, posting)
+            insert_skills(conn, posting_id, extract_skills(posting["raw_text"]))
 
-    freq = skill_frequency(conn)
-    cooc = skill_cooccurrence(conn)
-    gaps = gap_report(conn, SAMPLE_CANDIDATE_SKILLS)
+        frequency = skill_frequency(conn)
+        cooccurrence = skill_cooccurrence(conn)
+        gaps = gap_report(conn, candidate_skills or SAMPLE_CANDIDATE_SKILLS)
+    finally:
+        conn.close()
 
-    result = {
+    result: dict[str, Any] = {
         "postings_analyzed": len(postings),
         "generated_from": "synthetic sample data (see data/generate_sample_postings.py)",
-        "skill_frequency": freq.to_dict("records"),
-        "skill_cooccurrence": cooc.to_dict("records"),
+        "skill_frequency": frequency.to_dict("records"),
+        "skill_cooccurrence": cooccurrence.to_dict("records"),
         "gap_report": gaps,
-        "candidate_skills_used": SAMPLE_CANDIDATE_SKILLS,
+        "candidate_skills_used": candidate_skills or SAMPLE_CANDIDATE_SKILLS,
     }
 
-    EXPORT_PATH.parent.mkdir(exist_ok=True)
-    EXPORT_PATH.write_text(json.dumps(result, indent=2))
-    conn.close()
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    output_file.write_text(json.dumps(result, indent=2), encoding="utf-8")
     return result
 
 
+def _load_postings(path: Path) -> list[dict[str, Any]]:
+    try:
+        value: Any = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError("Posting data could not be loaded") from exc
+
+    if not isinstance(value, list) or not value:
+        raise ValueError("Posting data must be a non-empty JSON array")
+    if not all(isinstance(item, dict) for item in value):
+        raise ValueError("Every posting must be a JSON object")
+    return value
+
+
 if __name__ == "__main__":
-    result = run_pipeline()
-    print(f"Analyzed {result['postings_analyzed']} postings.")
-    print(f"Top 5 skills: {[s['skill'] for s in result['skill_frequency'][:5]]}")
+    analysis = run_pipeline()
+    print(f"Analyzed {analysis['postings_analyzed']} postings.")
+    print(f"Top 5 skills: {[item['skill'] for item in analysis['skill_frequency'][:5]]}")
     print(f"Exported to {EXPORT_PATH}")
