@@ -26,7 +26,10 @@ def extract_skills_llm(text: str) -> list[dict[str, str]]:
         return []
 
     prompt = f"<posting>\n{_escape_delimiters(text)}\n</posting>"
-    result_text = _call_anthropic(prompt) if os.environ.get("ANTHROPIC_API_KEY") else _call_openai(prompt)
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        result_text = _call_anthropic(prompt)
+    else:
+        result_text = _call_openai(prompt)
     return parse_llm_extraction(result_text)
 
 
