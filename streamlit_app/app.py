@@ -119,5 +119,6 @@ except (OSError, ValueError, RuntimeError):
 st.divider()
 st.caption(
     "Portfolio demonstration only. The sample is synthetic and does not represent complete or "
-    "real-time labour-market coverage. Use only licensed or explicitly permitted data in future work."
+    "real-time labour-market coverage. Use only licensed or explicitly permitted data in "
+    "future work."
 )
