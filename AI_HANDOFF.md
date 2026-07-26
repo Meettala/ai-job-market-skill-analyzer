@@ -1,6 +1,6 @@
 # AI Handoff — AI Job Market Skill Analyzer
 
-> Paste this file into another AI assistant to continue the project without restarting it. Verify the live repository, active pull requests, branch head, dependency versions and CI before editing.
+> Paste this file into ChatGPT, Claude, Gemini, Copilot, Perplexity, or another AI assistant to continue the project without restarting it. Always verify the live repository, open pull requests, current `main` branch and latest CI before editing.
 
 ## Continuation instruction
 
@@ -10,19 +10,22 @@ Do not weaken the synthetic-data boundary, deterministic rule-based extraction p
 
 Never commit API keys, scraped restricted data, private candidate documents, employer data, customer data or confidential production details.
 
-## Repository state
+## Current repository state
 
+- Repository: `Meettala/ai-job-market-skill-analyzer`
 - Default branch: `main`
-- Professionalisation branch: `agent/professional-repository-foundation`
-- Pull request: PR #1, `Professionalize AI job market skill analyzer`
-- Starting commit: `fc6e6cb0adf3b76d5617aa745bf4baf5f3be96cb`
+- Professionalisation PR: PR #1, `Professionalize AI job market skill analyzer`
+- PR status: merged and closed
+- Merge commit: `5460a5fec9897df14e71468f1f9a9911d023a082`
+- Starting commit before professionalisation: `fc6e6cb0adf3b76d5617aa745bf4baf5f3be96cb`
 - Stack: Python 3.10–3.12, pandas, SQLite, Streamlit, pytest, Ruff and optional OpenAI/Anthropic extraction
 - Licence: MIT
+- Project status: portfolio-ready at code/repository level
 - Last updated: 26 July 2026
 
 ## Product purpose
 
-The application analyses synthetic or explicitly permitted AI/ML job postings, extracts skills, stores evidence in SQLite, produces frequency/co-occurrence and candidate-gap reports, exports JSON and provides a Streamlit dashboard.
+The application analyses synthetic or explicitly permitted AI/ML job postings, extracts skills, stores evidence in SQLite, produces frequency, co-occurrence and candidate-gap reports, exports JSON and provides a Streamlit dashboard.
 
 The public repository does not claim complete or real-time labour-market coverage.
 
@@ -39,7 +42,7 @@ The public repository does not claim complete or real-time labour-market coverag
 9. Raw provider errors, keys and private data must not be exposed.
 10. The project does not claim perfect extraction or immunity from every prompt-injection technique.
 
-## Implemented professional foundation
+## Completed professional foundation
 
 - Added `pyproject.toml`, development requirements and Python 3.10–3.12 CI.
 - Added Ruff and `pip-audit` quality gates.
@@ -55,17 +58,17 @@ The public repository does not claim complete or real-time labour-market coverag
 - Added recruiter-focused README, architecture, roadmap and presentation guide.
 - Added architecture and social-preview SVG assets.
 
-## Verified status
+## Verified engineering status
 
-Workflow run 26 passed on the integrated implementation:
+The integrated professionalisation workflow passed:
 
 - Python 3.10 tests;
 - Python 3.11 tests;
 - Python 3.12 tests;
-- Ruff application/test/data linting;
+- Ruff source, Streamlit, test and data-utility linting;
 - `pip-audit` against runtime requirements.
 
-A final documentation-only CI run is required after this handoff update. Do not claim a later head is green without checking GitHub.
+Before making any new claim about later commits, check the latest GitHub Actions run on `main`.
 
 ## Known limitations
 
@@ -74,12 +77,32 @@ A final documentation-only CI run is required after this handoff update. Do not 
 - Optional model extraction can still be imperfect after schema validation.
 - Candidate skills are self-entered and not independently verified.
 - Docker is suitable for demonstration, not a complete production platform.
-- Real screenshots and video must be captured from a running application.
+- A real screenshot and video must be captured from a running application.
 
-## Remaining presentation tasks
+## Remaining manual presentation tasks
 
-Follow `docs/PORTFOLIO_PRESENTATION_GUIDE.md` to capture a real screenshot, record a 30–60 second demo and upload the rendered social-preview PNG in GitHub settings.
+These tasks are presentation-only and do not block repository readiness:
+
+1. Run or deploy the Streamlit application.
+2. Capture a clean screenshot using synthetic sample data.
+3. Record a 30–60 second demo.
+4. Convert `docs/assets/social-preview.svg` to PNG and upload it in GitHub repository settings.
+5. Add the project to the final portfolio website after the remaining repositories are completed.
+
+Follow `docs/PORTFOLIO_PRESENTATION_GUIDE.md` for the exact beginner-friendly steps.
+
+## Resume-later checkpoint
+
+No unfinished professionalisation branch work needs to be resumed for this repository. The code and documentation have already been merged into `main`.
+
+When the user asks to continue the remaining project programme, move to the next unfinished repository in this order:
+
+1. `Meettala/ml-prediction-app`
+2. `Meettala/jobpilot-ai`
+3. `Meettala/meet-tala-portfolio`
+
+The portfolio repository should be completed last so it can present all finished projects accurately.
 
 ## Rules for another AI
 
-Inspect the live repository and CI before editing. Add positive, negative and edge-case tests for behavioural changes. Never fabricate benchmarks, real-market coverage, recruiter outcomes or screenshots. Keep future commercial ingestion and private candidate data in a separate governed private system.
+Inspect the live repository and CI before editing. Add positive, negative and edge-case tests for behavioural changes. Never fabricate benchmarks, real-market coverage, recruiter outcomes, screenshots or deployment status. Keep future commercial ingestion and private candidate data in a separate governed private system.
