@@ -1,34 +1,24 @@
-"""
-Skill extraction from job posting text.
-
-Two extractors are provided:
-
-- extract_skills_rule_based(): zero-dependency keyword matcher against the
-  taxonomy. Always available, always deterministic, no API key needed.
-- extract_skills_llm(): optional, only used when OPENAI_API_KEY or
-  ANTHROPIC_API_KEY is set (see llm_extractor.py). Produces a broader,
-  more flexible skill list including terms outside the fixed taxonomy.
-
-extract_skills() picks whichever is available so the pipeline degrades
-gracefully instead of failing when no key is configured.
-"""
+"""Skill extraction from job posting text."""
 
 from __future__ import annotations
 
+import logging
 import os
 import re
 
-from .taxonomy import SKILL_TAXONOMY, skill_category
+from .taxonomy import SKILL_TAXONOMY
+
+LOGGER = logging.getLogger(__name__)
 
 
 def _normalize(text: str) -> str:
     return f" {re.sub(r'[^a-z0-9+./#& ]', ' ', text.lower())} "
 
 
-def extract_skills_rule_based(text: str) -> list[dict]:
-    """Deterministic keyword match. Returns list of {skill, category, evidence}."""
+def extract_skills_rule_based(text: str) -> list[dict[str, str]]:
+    """Return deterministic taxonomy matches with source evidence."""
     normalized = _normalize(text)
-    found = []
+    found: list[dict[str, str]] = []
     for category, skills in SKILL_TAXONOMY.items():
         for skill, variants in skills.items():
             for variant in variants:
@@ -49,25 +39,21 @@ def llm_available() -> bool:
     return bool(os.environ.get("OPENAI_API_KEY") or os.environ.get("ANTHROPIC_API_KEY"))
 
 
-def extract_skills(text: str) -> list[dict]:
-    """
-    Preferred entry point. Uses rule-based extraction always (fast, free,
-    reliable baseline), and layers in LLM extraction on top when a key is
-    configured, for skills the fixed taxonomy would otherwise miss.
-    """
+def extract_skills(text: str) -> list[dict[str, str]]:
+    """Combine deterministic extraction with validated optional provider results."""
     results = extract_skills_rule_based(text)
 
     if llm_available():
-        from .llm_extractor import extract_skills_llm  # imported lazily
+        from .llm_extractor import extract_skills_llm
 
-        seen = {r["skill"] for r in results}
+        seen = {result["skill"].casefold() for result in results}
         try:
-            llm_results = extract_skills_llm(text)
-            for r in llm_results:
-                if r["skill"] not in seen:
-                    results.append(r)
-                    seen.add(r["skill"])
-        except Exception as exc:  # never let an LLM hiccup break the pipeline
-            print(f"[extractor] LLM extraction skipped after error: {exc}")
+            for result in extract_skills_llm(text):
+                key = result["skill"].casefold()
+                if key not in seen:
+                    results.append(result)
+                    seen.add(key)
+        except (ImportError, RuntimeError, ValueError, TimeoutError):
+            LOGGER.warning("Provider extraction failed; continuing with rule-based results")
 
     return results
