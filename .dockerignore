@@ -1,0 +1,14 @@
+.git
+.github
+.env
+.env.*
+.venv
+venv
+__pycache__
+.pytest_cache
+.ruff_cache
+*.pyc
+*.pyo
+*.db
+exports/*
+!exports/.gitkeep
