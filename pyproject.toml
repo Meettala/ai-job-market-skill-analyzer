@@ -40,5 +40,6 @@ select = ["E", "F", "I", "B", "UP"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*.py" = ["E402"]
+"streamlit_app/app.py" = ["E402"]
 "data/generate_sample_postings.py" = ["E501"]
 "src/analyzer/taxonomy.py" = ["E501"]
