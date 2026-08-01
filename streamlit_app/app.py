@@ -2,8 +2,19 @@
 
 from __future__ import annotations
 
+import sys
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
+
+# Streamlit Community Cloud executes this file from ``streamlit_app`` and installs
+# ``requirements.txt`` without necessarily installing the local package. Add the
+# repository root explicitly so the source package remains importable in both
+# local and hosted execution environments.
+REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+if str(REPOSITORY_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPOSITORY_ROOT))
 
 from src.analyzer.db import get_connection
 from src.analyzer.extractor import llm_available
