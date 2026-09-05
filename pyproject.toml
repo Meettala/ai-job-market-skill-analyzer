@@ -43,3 +43,5 @@ select = ["E", "F", "I", "B", "UP"]
 "streamlit_app/app.py" = ["E402"]
 "data/generate_sample_postings.py" = ["E501"]
 "src/analyzer/taxonomy.py" = ["E501"]
+# Existing ESCO builder contains long API/attribution literals; do not churn it for JR04.
+"tools/build_esco_vocabulary.py" = ["E501"]
