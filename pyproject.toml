@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ai-job-market-skill-analyzer"
 version = "0.1.0"
-description = "Safety-first AI job posting skill analysis and candidate gap reporting."
+description = "Reproducible Python/SQLite skill analysis for defined posting datasets with explicit claim boundaries."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
@@ -43,3 +43,5 @@ select = ["E", "F", "I", "B", "UP"]
 "streamlit_app/app.py" = ["E402"]
 "data/generate_sample_postings.py" = ["E501"]
 "src/analyzer/taxonomy.py" = ["E501"]
+# Existing ESCO builder contains long API/attribution literals; do not churn it for JR04.
+"tools/build_esco_vocabulary.py" = ["E501"]

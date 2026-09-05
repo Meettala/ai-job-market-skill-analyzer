@@ -1,20 +1,17 @@
-"""
-Shared ESCO vocabulary.
+"""Reference loader and lookup utilities for the bundled ESCO vocabulary.
 
-This replaces the hand-written ``SKILL_TAXONOMY``, which held roughly sixty
-AI/ML terms grouped into categories like "ML/DL Frameworks" and "LLM / GenAI".
-That taxonomy could only describe AI and data roles, which made the analyzer
-useless for the labour market as a whole.
+The compressed artefact in ``data/esco-vocabulary.json.gz`` is a broad ESCO
+reference vocabulary covering occupations and skills across all ten ISCO-08
+major groups. It is useful for exact label lookup, attribution and future
+mapping work.
 
-The artefact in ``data/esco-vocabulary.json.gz`` covers every field of work:
-2,909 occupations across all ten ISCO-08 major groups, 12,549 skills, and the
-occupation-to-skill relationships between them. It is byte-identical to the
-copy JobPilot AI reads, and the ESCO URI is the join key between the two
-applications. Neither imports the other's code.
+It does *not* replace the active deterministic extractor. The default no-key
+extraction path in ``extractor.py`` still uses the curated AI/ML taxonomy in
+``taxonomy.py``. JR04 keeps that distinction explicit rather than adding an
+unbounded matcher across the full ESCO vocabulary.
 
-Licensing: the artefact is CC BY 4.0, not MIT. See ATTRIBUTION.md. The
-attribution must remain visible to end users, so ``attribution()`` exists to
-be rendered in the interface rather than merely stored on disk.
+Licensing: the artefact has its own attribution/licensing boundary separate
+from the repository's MIT-licensed source code. See ATTRIBUTION.md.
 """
 
 from __future__ import annotations
@@ -28,6 +25,19 @@ from typing import Any
 
 ARTEFACT_PATH = Path(__file__).resolve().parents[2] / "data" / "esco-vocabulary.json.gz"
 
+_REQUIRED_TOP_LEVEL_FIELDS = {
+    "source",
+    "sourceUrl",
+    "licence",
+    "attribution",
+    "generatedBy",
+    "method",
+    "scopeNote",
+    "counts",
+    "occupations",
+    "skills",
+}
+
 _NON_LABEL_CHARS = re.compile(r"[^a-z0-9+.#/ -]")
 _PARENTHETICAL = re.compile(r"\([^)]*\)")
 _WHITESPACE = re.compile(r"\s+")
@@ -35,26 +45,101 @@ _WHITESPACE = re.compile(r"\s+")
 
 @lru_cache(maxsize=1)
 def load_vocabulary() -> dict[str, Any]:
-    """Load and memoise the artefact. It is about 4 MB compressed."""
+    """Load, validate and memoise the committed ESCO artefact."""
     if not ARTEFACT_PATH.exists():
         raise FileNotFoundError(
             f"ESCO vocabulary artefact not found at {ARTEFACT_PATH}. "
             "Regenerate it with tools/build_esco_vocabulary.py."
         )
     with gzip.open(ARTEFACT_PATH, "rt", encoding="utf-8") as handle:
-        return json.load(handle)
+        vocabulary: Any = json.load(handle)
+    validate_vocabulary(vocabulary)
+    return vocabulary
+
+
+def validate_vocabulary(vocabulary: Any) -> None:
+    """Validate structural invariants used by the repository."""
+    if not isinstance(vocabulary, dict):
+        raise ValueError("ESCO vocabulary must be a JSON object")
+
+    missing = _REQUIRED_TOP_LEVEL_FIELDS - set(vocabulary)
+    if missing:
+        raise ValueError(f"ESCO vocabulary missing required fields: {sorted(missing)}")
+
+    attribution_text = vocabulary["attribution"]
+    scope_text = vocabulary["scopeNote"]
+    if not isinstance(attribution_text, str) or not attribution_text.strip():
+        raise ValueError("ESCO vocabulary attribution must be a non-empty string")
+    if not isinstance(scope_text, str) or not scope_text.strip():
+        raise ValueError("ESCO vocabulary scope note must be a non-empty string")
+
+    occupations = vocabulary["occupations"]
+    skills = vocabulary["skills"]
+    counts = vocabulary["counts"]
+    if not isinstance(occupations, dict) or not isinstance(skills, dict):
+        raise ValueError("ESCO occupations and skills must be JSON objects keyed by URI")
+    if not isinstance(counts, dict):
+        raise ValueError("ESCO counts must be a JSON object")
+
+    _validate_uri_mapping("occupation", occupations)
+    _validate_uri_mapping("skill", skills)
+
+    groups = {o["iscoPath"][0] for o in occupations.values() if o.get("iscoPath")}
+    expected_counts = {
+        "occupations": len(occupations),
+        "skills": len(skills),
+        "iscoMajorGroups": len(groups),
+    }
+    for key, actual in expected_counts.items():
+        if counts.get(key) != actual:
+            raise ValueError(
+                f"ESCO counts.{key}={counts.get(key)!r} does not match committed data {actual}"
+            )
+
+
+def _validate_uri_mapping(label: str, concepts: dict[str, Any]) -> None:
+    uris: list[str] = []
+    for key, concept in concepts.items():
+        if not isinstance(key, str) or not isinstance(concept, dict):
+            raise ValueError(f"ESCO {label} entries must be URI-keyed objects")
+        uri = concept.get("uri")
+        if uri != key:
+            raise ValueError(f"ESCO {label} key does not match its uri field: {key}")
+        uris.append(uri)
+    if len(uris) != len(set(uris)):
+        raise ValueError(f"ESCO {label} concept URIs must be unique")
+
+
+def artifact_summary() -> dict[str, int]:
+    """Return reproducible counts derived from the committed artefact itself."""
+    vocabulary = load_vocabulary()
+    occupations = vocabulary["occupations"]
+    skills = vocabulary["skills"]
+    groups = {o["iscoPath"][0] for o in occupations.values() if o.get("iscoPath")}
+    return {
+        "occupations": len(occupations),
+        "skills": len(skills),
+        "essential_skill_links": sum(
+            len(o.get("essentialSkills", [])) for o in occupations.values()
+        ),
+        "skill_alternative_labels": sum(
+            len(s.get("alternativeLabels", [])) for s in skills.values()
+        ),
+        "occupation_alternative_labels": sum(
+            len(o.get("alternativeLabels", [])) for o in occupations.values()
+        ),
+        "isco_major_groups": len(groups),
+        "ambiguous_surface_forms": sum(1 for uris in label_index().values() if len(uris) > 1),
+    }
 
 
 def attribution() -> str:
-    """
-    Attribution text that must be shown to users, not merely kept in a file.
-    CC BY 4.0 obliges the notice to travel with the data into the product.
-    """
+    """Return the attribution text stored in the artefact."""
     return load_vocabulary()["attribution"]
 
 
 def scope_note() -> str:
-    """Honest statement of what the vocabulary does and does not cover well."""
+    """Return the scope note stored in the artefact."""
     return load_vocabulary()["scopeNote"]
 
 
@@ -66,13 +151,7 @@ def normalize_label(label: str) -> str:
 
 @lru_cache(maxsize=1)
 def label_index() -> dict[str, tuple[str, ...]]:
-    """
-    Map every normalised surface form onto the concept URIs that use it.
-
-    A surface form can legitimately belong to several concepts, so every match
-    is returned rather than one being silently chosen. Disambiguation needs
-    surrounding context and is the caller's responsibility.
-    """
+    """Map normalized surface forms to every ESCO concept URI using that form."""
     vocabulary = load_vocabulary()
     index: dict[str, list[str]] = {}
 
@@ -103,11 +182,7 @@ def lookup_label(label: str) -> tuple[str, ...]:
 
 
 def isco_major_group(occupation_uri: str) -> str | None:
-    """
-    The top-level ISCO group for an occupation, e.g. "Craft and related trades
-    workers". Demand figures are reported per group so that a skill trending in
-    one part of the labour market is not presented as trending everywhere.
-    """
+    """Return the top-level ISCO group for one occupation URI."""
     occupation = load_vocabulary()["occupations"].get(occupation_uri)
     if not occupation or not occupation["iscoPath"]:
         return None

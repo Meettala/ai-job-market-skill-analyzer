@@ -22,6 +22,11 @@ the ISCO-08 classification through the public ESCO API. It contains occupation
 labels, skill labels, alternative labels and the occupation-to-skill
 relationships. It is a reformatting of ESCO content, not an independent work.
 
+Bundling the artefact does not mean the default deterministic extractor uses
+all ESCO concepts. The active no-key extractor remains the curated AI/ML
+taxonomy in `src/analyzer/taxonomy.py`; the ESCO artefact is currently a
+validated reference/lookup vocabulary.
+
 ## Onward obligations
 
 CC BY 4.0 requires attribution to travel with the data. If you reuse this

@@ -42,6 +42,12 @@ def get_connection(db_path: str | Path) -> sqlite3.Connection:
     return conn
 
 
+def posting_count(conn: sqlite3.Connection) -> int:
+    """Return the true number of stored postings."""
+    row = conn.execute("SELECT COUNT(*) FROM postings").fetchone()
+    return int(row[0]) if row else 0
+
+
 def insert_posting(conn: sqlite3.Connection, posting: dict[str, Any]) -> int:
     """Validate and insert one posting using parameterised SQL."""
     title = _required_text(posting.get("title"), "title")

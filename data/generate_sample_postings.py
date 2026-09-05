@@ -1,24 +1,27 @@
 """
-Generates data/sample_postings.json — a SYNTHETIC set of AI/ML job
-postings for demo purposes only.
+Generate ``data/sample_postings.json`` — a SYNTHETIC AI/ML posting sample.
 
-Why synthetic: the MVP safety rules (see docs/security/safety-rules.md)
-rule out scraping platforms whose terms disallow it, and no approved
-search API is wired up yet (that's Version 2 in the roadmap). So this
-demo ships with realistic, hand-composed postings rather than real
-scraped listings, clearly labeled as such everywhere they're shown.
+The public sample is hand-composed and synthetic. It is intentionally not a
+real-time or representative labour-market dataset and contains no scraped job
+board content.
 
-To use real data instead: replace data/sample_postings.json with postings
-from a permitted source (e.g. a public dataset you're licensed to use, or
-your own approved API integration later) in the same shape, and everything
-downstream (extraction, storage, dashboard) works unchanged.
+Regenerate the committed file:
+    python data/generate_sample_postings.py
+
+Verify byte-for-byte reproducibility without rewriting it:
+    python data/generate_sample_postings.py --check
 """
 
+from __future__ import annotations
+
+import argparse
 import json
 import random
 from pathlib import Path
 
-random.seed(7)
+SEED = 7
+SAMPLE_COUNT = 40
+SYNTHETIC_SOURCE_PREFIX = "https://example-demo-data.local/postings/"
 
 TITLES = [
     "Junior Machine Learning Engineer",
@@ -70,12 +73,13 @@ SNIPPETS = [
 
 INTRO = "We're looking for a {title} to join our growing AI team at {company}. This is a {seniority}-level role based in {location}."
 
-def build_posting(i: int) -> dict:
-    title = random.choice(TITLES)
-    company = random.choice(COMPANIES)
-    location = random.choice(LOCATIONS)
-    seniority = random.choice(SENIORITIES)
-    body_snippets = random.sample(SNIPPETS, k=random.randint(5, 8))
+
+def build_posting(i: int, rng: random.Random) -> dict[str, str]:
+    title = rng.choice(TITLES)
+    company = rng.choice(COMPANIES)
+    location = rng.choice(LOCATIONS)
+    seniority = rng.choice(SENIORITIES)
+    body_snippets = rng.sample(SNIPPETS, k=rng.randint(5, 8))
     raw_text = INTRO.format(title=title, company=company, seniority=seniority, location=location)
     raw_text += " " + " ".join(body_snippets)
     return {
@@ -83,16 +87,45 @@ def build_posting(i: int) -> dict:
         "company": company,
         "location": location,
         "seniority": seniority,
-        "source_url": f"https://example-demo-data.local/postings/{i}",
+        "source_url": f"{SYNTHETIC_SOURCE_PREFIX}{i}",
         "retrieved_at": "2026-07-01",
         "raw_text": raw_text,
     }
 
-def main():
-    postings = [build_posting(i) for i in range(1, 41)]
+
+def generate_postings(seed: int = SEED, count: int = SAMPLE_COUNT) -> list[dict[str, str]]:
+    """Return the deterministic synthetic posting list using a local RNG."""
+    rng = random.Random(seed)
+    return [build_posting(i, rng) for i in range(1, count + 1)]
+
+
+def render_postings(seed: int = SEED, count: int = SAMPLE_COUNT) -> str:
+    """Return the exact committed JSON representation."""
+    return json.dumps(generate_postings(seed=seed, count=count), indent=2)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--check", action="store_true", help="verify the committed sample only")
+    args = parser.parse_args()
+
     out_path = Path(__file__).parent / "sample_postings.json"
-    out_path.write_text(json.dumps(postings, indent=2))
-    print(f"Wrote {len(postings)} synthetic postings to {out_path}")
+    expected = render_postings()
+
+    if args.check:
+        if not out_path.exists():
+            print(f"Synthetic sample is missing: {out_path}")
+            return 1
+        if out_path.read_text(encoding="utf-8") != expected:
+            print("Synthetic sample differs from deterministic generator output")
+            return 1
+        print(f"Verified {SAMPLE_COUNT} deterministic synthetic postings in {out_path}")
+        return 0
+
+    out_path.write_text(expected, encoding="utf-8")
+    print(f"Wrote {SAMPLE_COUNT} synthetic postings to {out_path}")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

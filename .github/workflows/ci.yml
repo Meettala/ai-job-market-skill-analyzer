@@ -29,7 +29,12 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
 
+      - name: Check installed dependency consistency
+        run: python -m pip check
+
       - name: Run tests
+        env:
+          ENABLE_PROVIDER_MODE: "false"
         run: python -m pytest
 
   quality:
@@ -48,8 +53,59 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip && python -m pip install -r requirements-dev.txt
 
+      - name: Check installed dependency consistency
+        run: python -m pip check
+
+      - name: Verify deterministic synthetic sample
+        run: python data/generate_sample_postings.py --check
+
+      - name: Verify committed ESCO artefact
+        run: python -m tools.verify_esco_artifact
+
+      - name: Run deterministic pipeline
+        env:
+          ENABLE_PROVIDER_MODE: "false"
+        run: python -m src.analyzer.pipeline
+
       - name: Run Ruff
-        run: ruff check src streamlit_app tests data --output-format=github
+        run: ruff check src streamlit_app tests data tools --output-format=github
 
       - name: Audit dependencies
         run: pip-audit -r requirements.txt
+
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker build -t job-market-skill-analyzer:ci .
+
+      - name: Verify non-root runtime user
+        run: test "$(docker image inspect job-market-skill-analyzer:ci --format '{{.Config.User}}')" = "app"
+
+      - name: Start deterministic demo container
+        run: |
+          docker run -d --name jr04-demo -p 8501:8501 \
+            -e ENABLE_PROVIDER_MODE=false \
+            job-market-skill-analyzer:ci
+
+      - name: Verify Streamlit health and homepage
+        run: |
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:8501/_stcore/health >/dev/null; then
+              break
+            fi
+            if [ "$attempt" -eq 30 ]; then
+              docker logs jr04-demo
+              exit 1
+            fi
+            sleep 2
+          done
+          curl --fail --silent http://127.0.0.1:8501/ >/dev/null
+
+      - name: Stop container
+        if: always()
+        run: docker rm -f jr04-demo || true

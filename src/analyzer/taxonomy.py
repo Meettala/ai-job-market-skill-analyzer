@@ -1,11 +1,15 @@
 """
-Skill taxonomy for AI/ML job postings.
+Curated skill taxonomy for AI/ML job postings.
 
-This is the zero-dependency baseline: a curated set of skill terms grouped
-by category, each with common surface-form variants. Used by the
-rule-based extractor so the whole pipeline works with no API key.
-When an LLM key is available, llm_extractor.py is used instead/in addition
-for skills this taxonomy misses (see extractor.py for the selection logic).
+This is the zero-dependency deterministic baseline: a deliberately narrow set
+of AI, data and software skill terms grouped by category, each with common
+surface-form variants. It is the taxonomy consumed by the default rule-based
+extractor. The separately bundled ESCO artefact is a reference/lookup
+vocabulary and does not replace this active extraction path.
+
+When optional provider mode is explicitly enabled and a provider key is
+available, validated provider results can supplement these deterministic
+matches (see extractor.py and provider_config.py).
 """
 
 SKILL_TAXONOMY: dict[str, dict[str, list[str]]] = {
@@ -55,7 +59,7 @@ SKILL_TAXONOMY: dict[str, dict[str, list[str]]] = {
         "Statistics": ["statistics", "statistical modeling", "hypothesis testing"],
         "A/B Testing": ["a/b testing", "experimentation"],
         "NLP": ["nlp", "natural language processing"],
-        "Computer Vision": ["computer vision", "cv "],
+        "Computer Vision": ["computer vision"],
         "Deep Learning": ["deep learning", "neural network"],
         "Model Evaluation": ["model evaluation", "cross-validation"],
         "Feature Engineering": ["feature engineering"],

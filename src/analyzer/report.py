@@ -1,4 +1,4 @@
-"""Deterministic aggregation and candidate gap-report logic."""
+"""Deterministic aggregation and entered-skill comparison logic."""
 
 from __future__ import annotations
 
@@ -6,13 +6,15 @@ import sqlite3
 
 import pandas as pd
 
+from .db import posting_count
+
 FREQUENCY_COLUMNS = ["skill", "category", "postings_mentioning", "pct_of_postings"]
 COOCCURRENCE_COLUMNS = ["skill_a", "skill_b", "co_occurrences"]
 
 
 def skill_frequency(conn: sqlite3.Connection) -> pd.DataFrame:
-    """Return posting frequency and percentage for every extracted skill."""
-    total_postings = int(pd.read_sql("SELECT COUNT(*) AS n FROM postings", conn).iloc[0]["n"])
+    """Return dataset-scoped posting frequency for every extracted skill."""
+    total_postings = posting_count(conn)
     if total_postings == 0:
         return pd.DataFrame(columns=FREQUENCY_COLUMNS)
 
@@ -32,7 +34,7 @@ def skill_frequency(conn: sqlite3.Connection) -> pd.DataFrame:
 
 
 def skill_cooccurrence(conn: sqlite3.Connection, top_n: int = 15) -> pd.DataFrame:
-    """Return the most frequent distinct skill pairs per posting."""
+    """Return the most frequent distinct skill pairs within the analysed postings."""
     if top_n <= 0:
         return pd.DataFrame(columns=COOCCURRENCE_COLUMNS)
 
@@ -65,7 +67,11 @@ def gap_report(
     candidate_skills: list[str],
     min_pct: float = 15.0,
 ) -> dict[str, object]:
-    """Compare candidate skills with evidence-backed market frequency."""
+    """Compare entered skill labels with recurring skills in the analysed dataset.
+
+    The comparison is literal after whitespace/case normalisation. It does not
+    verify a person's capability, estimate hiring probability or produce an ATS score.
+    """
     threshold = min(max(float(min_pct), 0.0), 100.0)
     frequency = skill_frequency(conn)
     candidate_set = {

@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .db import get_connection, insert_posting, insert_skills
+from .db import get_connection, insert_posting, insert_skills, posting_count
 from .extractor import extract_skills
 from .report import gap_report, skill_cooccurrence, skill_frequency
 
@@ -32,7 +32,7 @@ def run_pipeline(
     export_path: str | Path = EXPORT_PATH,
     candidate_skills: list[str] | None = None,
 ) -> dict[str, Any]:
-    """Analyse permitted postings and export a deterministic report."""
+    """Analyse permitted postings and export a deterministic dataset-scoped report."""
     postings_file = Path(postings_path)
     database_file = Path(db_path)
     output_file = Path(export_path)
@@ -47,15 +47,23 @@ def run_pipeline(
             posting_id = insert_posting(conn, posting)
             insert_skills(conn, posting_id, extract_skills(posting["raw_text"]))
 
+        stored_postings = posting_count(conn)
         frequency = skill_frequency(conn)
         cooccurrence = skill_cooccurrence(conn)
         gaps = gap_report(conn, candidate_skills or SAMPLE_CANDIDATE_SKILLS)
     finally:
         conn.close()
 
+    if stored_postings != len(postings):
+        raise RuntimeError("Stored posting count does not match validated input count")
+
     result: dict[str, Any] = {
-        "postings_analyzed": len(postings),
+        "postings_analyzed": stored_postings,
         "generated_from": "synthetic sample data (see data/generate_sample_postings.py)",
+        "scope_note": (
+            "Statistics describe only the analysed dataset; they are not representative "
+            "labour-market demand, hiring probability or an ATS score."
+        ),
         "skill_frequency": frequency.to_dict("records"),
         "skill_cooccurrence": cooccurrence.to_dict("records"),
         "gap_report": gaps,
