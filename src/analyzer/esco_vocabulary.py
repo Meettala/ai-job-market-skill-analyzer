@@ -119,8 +119,12 @@ def artifact_summary() -> dict[str, int]:
     return {
         "occupations": len(occupations),
         "skills": len(skills),
-        "essential_skill_links": sum(len(o.get("essentialSkills", [])) for o in occupations.values()),
-        "skill_alternative_labels": sum(len(s.get("alternativeLabels", [])) for s in skills.values()),
+        "essential_skill_links": sum(
+            len(o.get("essentialSkills", [])) for o in occupations.values()
+        ),
+        "skill_alternative_labels": sum(
+            len(s.get("alternativeLabels", [])) for s in skills.values()
+        ),
         "occupation_alternative_labels": sum(
             len(o.get("alternativeLabels", [])) for o in occupations.values()
         ),
