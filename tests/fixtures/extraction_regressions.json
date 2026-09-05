@@ -1,0 +1,47 @@
+[
+  {
+    "id": "python",
+    "text": "Production services are written in Python.",
+    "expected_skills": ["Python"]
+  },
+  {
+    "id": "sql-postgresql",
+    "text": "Strong PostgreSQL experience is required.",
+    "expected_skills": ["SQL"]
+  },
+  {
+    "id": "scikit-synonym",
+    "text": "Experience with sklearn for classical ML pipelines.",
+    "expected_skills": ["scikit-learn"]
+  },
+  {
+    "id": "docker-kubernetes",
+    "text": "Containerise workloads with Docker and operate them on Kubernetes.",
+    "expected_skills": ["Docker", "Kubernetes"]
+  },
+  {
+    "id": "cloud",
+    "text": "Deploy services on AWS and Google Cloud.",
+    "expected_skills": ["Cloud (AWS)", "Cloud (GCP)"]
+  },
+  {
+    "id": "rag-llm",
+    "text": "Build a RAG service that calls the OpenAI API.",
+    "expected_skills": ["LLM APIs", "RAG"]
+  },
+  {
+    "id": "visualisation-variant",
+    "text": "Create Power BI dashboards for stakeholders.",
+    "expected_skills": ["Data Visualization", "Stakeholder Communication"]
+  },
+  {
+    "id": "no-supported-skill",
+    "text": "We are hiring a barista with excellent customer service skills.",
+    "expected_skills": []
+  },
+  {
+    "id": "ambiguous-noisy-short-tokens",
+    "text": "Submit your CV and describe storage systems plus NoSQL database exposure.",
+    "expected_skills": []
+  }
+]
