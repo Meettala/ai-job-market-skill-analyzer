@@ -38,10 +38,11 @@ with st.expander("How this demo works", expanded=False):
     st.markdown(
         """
         1. Synthetic AI/ML job postings are processed locally.
-        2. A curated deterministic taxonomy extracts known skills without an API key.
-        3. Optional provider extraction requires explicit opt-in, is validated and falls back safely.
-        4. SQLite and pandas calculate dataset-scoped frequency, co-occurrence and entered-skill comparison.
-        5. The bundled ESCO artefact is a reference/lookup vocabulary; it is not the active default extractor.
+        2. A curated deterministic taxonomy extracts known skills without a key.
+        3. Provider extraction is explicit, validated and falls back safely.
+        4. SQLite/pandas calculate dataset-scoped frequency and co-occurrence.
+        5. Entered skills are compared with recurring extracted sample terms.
+        6. Bundled ESCO is a reference/lookup vocabulary, not the active extractor.
         """
     )
 
