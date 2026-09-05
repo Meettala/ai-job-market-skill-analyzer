@@ -60,7 +60,7 @@ jobs:
         run: python data/generate_sample_postings.py --check
 
       - name: Verify committed ESCO artefact
-        run: python tools/verify_esco_artifact.py
+        run: python -m tools.verify_esco_artifact
 
       - name: Run deterministic pipeline
         env:
