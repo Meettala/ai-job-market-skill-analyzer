@@ -116,7 +116,7 @@ python -m pytest
 ruff check src streamlit_app tests data tools
 pip-audit -r requirements.txt
 python data/generate_sample_postings.py --check
-python tools/verify_esco_artifact.py
+python -m tools.verify_esco_artifact
 python -m src.analyzer.pipeline
 ```
 
